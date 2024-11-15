@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create a new contract</title>
+</head>
+<body>
+<h1>Create a new contract</h1>
+<form action="/create" method="post">
+    <div class="form-group">
+        <label>Contract's number</label>
+        <input type="text" name="contract_number">
+    </div>
+
+    <div class="form-group">
+        <label>Customer Id</label>
+        <input type="text" name="customer_Id">
+    </div>
+
+    <div class="form-group">
+        <label>Registration number</label>
+        <input type="text" name="regNb">
+    </div>
+
+    <div class="form-group">
+        <label>Rental Start Date</label>
+        <input type="date" name="rental_start_date">
+    </div>
+
+    <div class="form-group">
+        <label>Rental End Date</label>
+        <input type="date" name="rental_end_date">
+    </div>
+
+    <div class="form-group">
+        <label>max Km</label>
+        <input type="text" name="maxKm">
+    </div>
+
+    <div class="submit-button-container">
+        <a href="/">
+            <button class="btn">Submit</button>
+        </a>
+    </div>
+
+</form>
+
+<div class="return-button-container">
+    <a href="/">
+        <button class="btn" id="btn-return">Return to Home Page</button>
+    </a>
+</div>
+
+</body>
+</html>

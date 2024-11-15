@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contracts List</title>
+    <link rel="stylesheet" type="text/css" href="/MyCSS.css">
+</head>
+<body>
+<h1>Contracts List</h1>
+
+<table>
+    <thead>
+    <tr>
+        <th>contract_number</th>
+        <th>customer_Id</th>
+        <th>regNb</th>
+        <th>rental_start_date</th>
+        <th>rental_end_date</th>
+        <th>maxKm</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <tr th:each="c: ${contracts}">
+        <td th:text="${c.contract_number}"/>
+        <td th:text="${c.customer_Id}"/>
+        <td th:text="${c.regNb}"/>
+        <td th:text="${c.rental_start_date}"/>
+        <td th:text="${c.rental_end_date}"/>
+        <td th:text="${c.maxKm}"/>
+        <td>
+            <a th:href="@{'/get_All_Contracts/' + ${c.contract_number}}">
+                <button class ="btn-get_All_Contracts" id="btn-get_All_Contracts"> View a contract</button>
+            </a>
+
+            <a th:href="@{'/deleteContracts/' + ${c.contract_number}}">
+                <button class ="btn-deleteContracts" id="btn-ddeleteContracts"> Delete a contract </button>
+            </a>
+
+            <a th:href="@{'/updateContracts/' + ${c.contract_number}}">
+                <button class ="btn-updateContracts" id="btn-updateContracts"> Update a contract </button>
+            </a>
+
+        </td>
+
+    </tr>
+    </tbody>
+</table>
+
+<div class="button-container">
+    <a href="/create">
+        <button class="btn-create btn" id="btn-create">Create a new contract</button>
+    </a>
+</div>
+
+</body>
+<//html>
