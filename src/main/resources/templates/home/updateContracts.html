@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>edit and update a contract</title>
+    <link rel="stylesheet" type="text/css" href="/MyCSS.css">
+
+</head>
+<body>
+<h1>edit and update a contract</h1>
+
+<form action="/updateContracts" method="post">
+    <input type="text" name="contract_number" th:value="${c.contract_number}">
+    <input type="text" name="customer_id" th:value="${c.customer_Id}">
+    <input type="text" name="regNb" th:value="${c.regNb}">
+    <input type="date" name="rental_start_date" th:value="${c.rental_start_date}">
+    <input type="date" name="rental_end_date" th:value="${c.rental_end_date}">
+    <input type="text" name="maxKm" th:value="${c.maxKm}">
+    <input type="submit" value="Save changes">
+</form>
+
+<div class="return-button-container">
+    <a href="/">
+        <button class="btn" id="btn-return">Return to Home Page</button>
+    </a>
+</div>
+
+</body>
+</html>

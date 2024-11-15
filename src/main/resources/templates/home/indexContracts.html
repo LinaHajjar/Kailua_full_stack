@@ -29,12 +29,12 @@
         <td th:text="${c.rental_end_date}"/>
         <td th:text="${c.maxKm}"/>
         <td>
-            <a th:href="@{'/get_All_Contracts/' + ${c.contract_number}}">
-                <button class ="btn-get_All_Contracts" id="btn-get_All_Contracts"> View a contract</button>
+            <a th:href="@{'/viewContracts/' + ${c.contract_number}}">
+                <button class ="btn-viewContracts" id="btn-viewContracts"> View a contract</button>
             </a>
 
             <a th:href="@{'/deleteContracts/' + ${c.contract_number}}">
-                <button class ="btn-deleteContracts" id="btn-ddeleteContracts"> Delete a contract </button>
+                <button class ="btn-deleteContracts" id="btn-deleteContracts"> Delete a contract </button>
             </a>
 
             <a th:href="@{'/updateContracts/' + ${c.contract_number}}">

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>View a contract</title>
+    <link rel="stylesheet" type="text/css" href="/MyCSS.css">
+</head>
+
+<body>
+
+      <h1>view a contract</h1>
+
+      <p> Contract_number:<span th:text="${contracts.contract_number}"/> </p>
+      <p> ID of the customer: <span th:text="${contracts.customer_Id}"/></p>
+      <p> Registration number of the car: <span th:text="${contracts.regNb}"/></p>
+      <p> Rental start date: <span th:text="${contracts.rental_start_date}"/></p>
+      <p> Rental end date: <span th:text="${contracts.rental_end_date}"/></p>
+      <p> The maximum Kilometer you expect to drive: <span th:text="${contracts.maxKm}"/></p>
+
+      <div class="return-button-container">
+        <a href="/">
+          <button class="btn" id="btn-return">Return to Home Page</button>
+        </a>
+      </div>
+
+</body>
+</html>

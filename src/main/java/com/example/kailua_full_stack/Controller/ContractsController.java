@@ -21,14 +21,25 @@ public class ContractsController {
     ContractsService contractsService;
 
     @GetMapping("/")
-    public String index(Model model) throws SQLException {
-        model.addAttribute("contracts", contractsService.get_All_Contracts());
-        return "home/index";
+    public String index(Model model) {
+        return "index";
     }
+
+    @GetMapping("/home/indexContracts")
+    public String indexContracts(Model model) throws SQLException {
+        model.addAttribute("contracts", contractsService.get_All_Contracts());
+        return "home/indexContracts";
+    }
+
+    /*@GetMapping("/")
+    public String indexContracts(Model model) throws SQLException {
+        model.addAttribute("contracts", contractsService.get_All_Contracts());
+        return "home/indexContracts";
+    }*/
 
     @GetMapping("/create")
     public String create(){
-        return "home/create";
+        return "home/createContracts";
     }
 
     @PostMapping("/create")
@@ -37,8 +48,8 @@ public class ContractsController {
         return "redirect:/";
     }
 
-    @GetMapping("/get_All_Contracts/{contract_number}")
-    public String get_All_Contracts(@PathVariable("contract_number") int contract_number, Model model)throws SQLException{
+    @GetMapping("/viewContracts/{contract_number}")
+    public String viewContracts(@PathVariable("contract_number") int contract_number, Model model)throws SQLException{
         model.addAttribute("contracts", contractsService.get_Contracts_by_id(contract_number));
         return "home/viewContracts";
     }
@@ -50,8 +61,8 @@ public class ContractsController {
     }
 
     @GetMapping("/updateContracts/{contract_number}")
-    public String updateAlbum(@PathVariable("contract_number") int contract_number, Model model)throws SQLException {
-        model.addAttribute("album", contractsService.get_Contracts_by_id(contract_number));
+    public String updateContracts(@PathVariable("contract_number") int contract_number, Model model)throws SQLException {
+        model.addAttribute("c", contractsService.get_Contracts_by_id(contract_number));
         return "home/updateContracts";
     }
 

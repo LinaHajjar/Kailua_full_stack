@@ -21,7 +21,7 @@ public class ContractsRepo {
         return template.query(sql, rowMapper);
     }
     public Contracts get_Contracts_by_id(int id) throws SQLException {
-        String sql = "SELECT * FROM contracts WHERE id = ?";
+        String sql = "SELECT * FROM contracts WHERE contract_number = ?";
         RowMapper<Contracts> rowMapper = new BeanPropertyRowMapper<>(Contracts.class);
         Contracts contracts = template.queryForObject(sql, rowMapper, id);
         return contracts;
@@ -32,8 +32,8 @@ public class ContractsRepo {
         template.update(sql, c.getContract_number(), c.getCustomer_Id(), c.getRegNb(), c.getRental_start_date(), c.getRental_end_date(), c.getMaxKm());
     }
     public void updateContracts(Contracts c) throws SQLException {
-        String sql = "UPDATE contracts SET contract_number=?, customer_Id=?, regNb=?, rental_start_date=?, rental_end_date=?, maxKm=? WHERE id = ?";
-        template.update(sql, c.getContract_number(), c.getCustomer_Id(),c.getRegNb(), c.getRental_start_date(), c.getRental_end_date(), c.getMaxKm());
+        String sql = "UPDATE contracts SET regNb=?, rental_start_date=?, rental_end_date=?, maxKm=? WHERE contract_number = ?";
+        template.update(sql, c.getRegNb(), c.getRental_start_date(), c.getRental_end_date(), c.getMaxKm(), c.getContract_number());
     }
 
     public Boolean deleteContracts(int contract_number) throws SQLException {
