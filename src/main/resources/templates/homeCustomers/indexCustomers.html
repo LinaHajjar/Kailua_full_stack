@@ -2,9 +2,65 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Customers List</title>
+    <link rel="stylesheet" type="text/css" href="/MyCSS.css">
 </head>
 <body>
+<h1>Customers List</h1>
+
+<table>
+    <thead>
+    <tr>
+        <th>Customer ID</th>
+        <th>Customer name</th>
+        <th>Customer address</th>
+        <th>Zip code</th>
+        <th>City</th>
+        <th>Country</th>
+        <th>Mobil number</th>
+        <th>E-mail</th>
+        <th>Drivers licence Number</th>
+        <th>Driver since</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <tr th:each="c: ${customers}">
+        <td th:text="${c.customer_Id}"/>
+        <td th:text="${c.customer_name}"/>
+        <td th:text="${c.customer_address}"/>
+        <td th:text="${c.zip_code}"/>
+        <td th:text="${c.city}"/>
+        <td th:text="${c.country}"/>
+        <td th:text="${c.mobil_nr}"/>
+        <td th:text="${c.email}"/>
+        <td th:text="${c.driversLicence_Nb}"/>
+        <td th:text="${c.driver_since}"/>
+
+        <td>
+            <a th:href="@{'/viewCustomers/' + ${c.customer_Id}}">
+                <button class ="btn-viewCustomers" id="btn-viewCustomers"> View a customer</button>
+            </a>
+
+            <a th:href="@{'/deleteCustomers/' + ${c.customer_Id}}">
+                <button class ="btn-deleteCustomers" id="btn-deleteCustomers"> Delete a customer</button>
+            </a>
+
+            <a th:href="@{'/updateCustomers/' + ${c.customer_Id}}">
+                <button class ="btn-updateCustomers" id="btn-updateCustomers"> Update a customer</button>
+            </a>
+
+        </td>
+
+    </tr>
+    </tbody>
+</table>
+
+<div class="button-container">
+    <a href="/create">
+        <button class="btn-create btn" id="btn-create">Add a new customer</button>
+    </a>
+</div>
 
 </body>
 </html>

@@ -31,12 +31,6 @@ public class ContractsController {
         return "home/indexContracts";
     }
 
-    /*@GetMapping("/")
-    public String indexContracts(Model model) throws SQLException {
-        model.addAttribute("contracts", contractsService.get_All_Contracts());
-        return "home/indexContracts";
-    }*/
-
     @GetMapping("/create")
     public String create(){
         return "home/createContracts";
