@@ -37,6 +37,7 @@ public class CarRepo {
         String sql = "UPDATE car SET brand=?, model=?, firstRegistrationDate=?, odometer=?, description_of_the_car=? WHERE regNb= ?";
         template.update(sql, c.getBrand(), c.getModel(), c.getFirstRegistrationDate(), c.getOdometer(), c.getDescription_of_the_car(), String.valueOf(c.getRegNB()));
     }
+
     public Boolean deleteCar (String regNb) throws SQLException {
         String sql = "DELETE FROM car WHERE regNb = ?";
         return template.update(sql, regNb)>0;

@@ -5,11 +5,29 @@ body{
     justify-content: center;
     min-height: 100vh;
     margin: 0;
+    background-image: url('background.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed
 }
 
 h1{
     text-align: center;
-    color: aqua;
+    color: dimgrey;
+    font-weight: bold; /*bold skrift*/
+}
+h1:hover {
+    /*text-decoration: underline; /*it will be underlined when the cursor is on it*/
+    color: blue;
+    background-color: lightgray;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    transform: scale(1.1); /* Scale up on hover */
+}
+
+h2{
+    text-align: center;
+    color: mediumblue;
+    font-weight: bold;
 }
 
 table{
@@ -96,3 +114,37 @@ input[type="date"] {
     margin-top: 20px;
 }
 
+.image-link-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 80px; /* Adjust the gap between the images as needed */
+}
+
+.image-link {
+    text-align: center;
+}
+
+.image-link img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+.image-link img:hover { /*"hop" effect*/
+    transform: scale(1.1);
+}
+
+.image-link p {
+    color: red;
+    text-align: center;
+    margin-top: 5px; /* Adjust margin as needed */
+    font-weight: bold;
+    font-size: 25px;
+    font-style: italic;
+    }
+
+.image-link p:hover {
+    transform: translateY(-5px);
+    transition: transform 0.3s ease-in-out;
+    }

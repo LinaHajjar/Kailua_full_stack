@@ -22,14 +22,15 @@
     </thead>
 
     <tbody>
+
     <tr th:each="c: ${car}">
-        <td th:text="${c.RegNB}"/>
-        <td th:text="${c.car_Id}"/>
-        <td th:text="${c.brand}"/>
-        <td th:text="${c.model}"/>
-        <td th:text="${c.firstRegistrationDate}"/>
-        <td th:text="${c.odometer}"/>
-        <td th:text="${c.description_of_the_car}"/>
+        <td th:text="${c.getRegNB()}"/>
+        <td th:text="${c.getCar_Id()}"/>
+        <td th:text="${c.getBrand()}"/>
+        <td th:text="${c.getModel()}"/>
+        <td th:text="${c.getFirstRegistrationDate()}"/>
+        <td th:text="${c.getOdometer()}"/>
+        <td th:text="${c.getDescription_of_the_car()}"/>
 
         <td>
             <a th:href="@{'/viewCar/' + ${c.regNB}}">
