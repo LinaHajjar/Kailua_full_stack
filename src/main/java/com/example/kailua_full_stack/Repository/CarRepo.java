@@ -30,13 +30,12 @@ public class CarRepo {
 
     public void createCar(Car c) throws SQLException {
         String sql = "INSERT INTO car (regNb, car_Id, brand, model, firstRegistrationDate, odometer, description_of_the_car) values (?,?,?,?,?,?,?)";
-        template.update(sql, c.getRegNB(), c.getCar_Id(), c.getBrand(), c.getModel(), c.getFirstRegistrationDate(), c.getOdometer(), c.getDescription_of_the_car());
+        template.update(sql, String.valueOf(c.getRegNB()), c.getCar_Id(), c.getBrand(), c.getModel(), c.getFirstRegistrationDate(), c.getOdometer(), c.getDescription_of_the_car());
     }
 
     public void updateCar(Car c) throws SQLException {
-        String reg=c.getRegNB();
         String sql = "UPDATE car SET brand=?, model=?, firstRegistrationDate=?, odometer=?, description_of_the_car=? WHERE regNb= ?";
-        template.update(sql, c.getBrand(), c.getModel(), c.getFirstRegistrationDate(), c.getOdometer(), c.getDescription_of_the_car(), c.getRegNB());
+        template.update(sql, c.getBrand(), c.getModel(), c.getFirstRegistrationDate(), c.getOdometer(), c.getDescription_of_the_car(), String.valueOf(c.getRegNB()));
     }
     public Boolean deleteCar (String regNb) throws SQLException {
         String sql = "DELETE FROM car WHERE regNb = ?";
