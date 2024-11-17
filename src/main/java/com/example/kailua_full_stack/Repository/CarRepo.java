@@ -34,6 +34,7 @@ public class CarRepo {
     }
 
     public void updateCar(Car c) throws SQLException {
+        String reg=c.getRegNB();
         String sql = "UPDATE car SET brand=?, model=?, firstRegistrationDate=?, odometer=?, description_of_the_car=? WHERE regNb= ?";
         template.update(sql, c.getBrand(), c.getModel(), c.getFirstRegistrationDate(), c.getOdometer(), c.getDescription_of_the_car(), c.getRegNB());
     }
