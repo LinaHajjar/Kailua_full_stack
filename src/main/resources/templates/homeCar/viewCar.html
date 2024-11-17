@@ -2,9 +2,27 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>View a car</title>
+    <link rel="stylesheet" type="text/css" href="/MyCSS.css">
 </head>
+
 <body>
+
+<h1>view a car</h1>
+
+<p> Car registration number:<span th:text="${car.regNB}"/> </p>
+<p> Car Id: <span th:text="${car.car_Id}"/></p>
+<p> Brand: <span th:text="${car.brand}"/></p>
+<p> Model: <span th:text="${car.model}"/></p>
+<p> First registration date: <span th:text="${car.firstRegistrationDate}"/></p>
+<p> Odometer: <span th:text="${car.odometer}"/></p>
+<p> Description of the car: <span th:text="${car.description_of_the_car}"/></p>
+
+<div class="return-button-container">
+    <a href="/">
+        <button class="btn" id="btn-return">Return to Home Page</button>
+    </a>
+</div>
 
 </body>
 </html>

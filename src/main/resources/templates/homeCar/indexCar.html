@@ -2,9 +2,59 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Cars List</title>
+    <link rel="stylesheet" type="text/css" href="/MyCSS.css">
 </head>
 <body>
+<h1>Cars List</h1>
+
+<table>
+    <thead>
+    <tr>
+        <th>registration's number</th>
+        <th>car Id</th>
+        <th>brand</th>
+        <th>model</th>
+        <th>first registration date</th>
+        <th>odometer</th>
+        <th>description of the car</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <tr th:each="c: ${car}">
+        <td th:text="${c.RegNB}"/>
+        <td th:text="${c.car_Id}"/>
+        <td th:text="${c.brand}"/>
+        <td th:text="${c.model}"/>
+        <td th:text="${c.firstRegistrationDate}"/>
+        <td th:text="${c.odometer}"/>
+        <td th:text="${c.description_of_the_car}"/>
+
+        <td>
+            <a th:href="@{'/viewCar/' + ${c.regNB}}">
+                <button class ="btn-viewCar" id="btn-viewCar"> View a car</button>
+            </a>
+
+            <a th:href="@{'/deleteCar/' + ${c.regNB}}">
+                <button class ="btn-deleteCar" id="btn-deleteCar"> Delete a car</button>
+            </a>
+
+            <a th:href="@{'/updateCar/' + ${c.regNB}}">
+                <button class ="btn-updateCar" id="btn-updateCar"> Update a car</button>
+            </a>
+
+        </td>
+
+    </tr>
+    </tbody>
+</table>
+
+<div class="button-container">
+    <a href="/createCar">
+        <button class="btn-create btn" id="btn-create">Create a new car</button>
+    </a>
+</div>
 
 </body>
 </html>

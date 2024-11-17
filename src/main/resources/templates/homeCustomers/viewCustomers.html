@@ -2,9 +2,29 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>View a customer</title>
+    <link rel="stylesheet" type="text/css" href="/MyCSS.css">
 </head>
+
 <body>
+
+<h1>view a customer</h1>
+
+<p> ID of the customer: <span th:text="${customers.customer_Id}"/></p>
+<p> Name of the customer:<span th:text="${customers.customer_name}"/> </p>
+<p> Address of the customer:<span th:text="${customers.customer_address}"/> </p>
+<p> Zip Code:<span th:text="${customers.zip_code}"/> </p>
+<p> Country:<span th:text="${customers.country}"/> </p>
+<p> Mobil number: <span th:text="${customers.mobil_nr}"/></p>
+<p> E-mail: <span th:text="${customers.email}"/></p>
+<p> Driver's Licence number: <span th:text="${customers.driversLicence_Nb}"/></p>
+<p> Driver since: <span th:text="${customers.driver_since}"/></p>
+
+<div class="return-button-container">
+    <a href="/">
+        <button class="btn" id="btn-return">Return to Home Page</button>
+    </a>
+</div>
 
 </body>
 </html>

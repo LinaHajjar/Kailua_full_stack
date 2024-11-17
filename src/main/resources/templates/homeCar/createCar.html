@@ -2,9 +2,60 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Add a new Car</title>
 </head>
 <body>
+<h1>Add a new Car</h1>
+<form action="/createCar" method="post">
+
+    <div class="form-group">
+        <label>Registration number</label>
+        <input type="text" name="regNb">
+    </div>
+
+    <div class="form-group">
+        <label>Car_Id</label>
+        <input type="text" name="car_Id">
+    </div>
+
+    <div class="form-group">
+        <label>Brand</label>
+        <input type="text" name="brand">
+    </div>
+
+    <div class="form-group">
+        <label>Model</label>
+        <input type="text" name="model">
+    </div>
+
+    <div class="form-group">
+        <label>first registration's date</label>
+        <input type="date" name="firstRegistrationDate">
+    </div>
+
+    <div class="form-group">
+        <label>Odometer</label>
+        <input type="text" name="odometer">
+    </div>
+
+    <div class="form-group">
+        <label>Description of the car</label>
+        <input type="text" name="description_of_the_car">
+    </div>
+
+    <div class="submit-button-container">
+        <a href="/">
+            <button class="btn">Submit</button>
+        </a>
+    </div>
+
+</form>
+
+<div class="return-button-container">
+    <a href="/">
+        <button class="btn" id="btn-return">Return to Home Page</button>
+    </a>
+</div>
 
 </body>
 </html>

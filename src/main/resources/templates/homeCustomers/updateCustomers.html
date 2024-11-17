@@ -2,9 +2,32 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>edit and update a customer</title>
+    <link rel="stylesheet" type="text/css" href="/MyCSS.css">
+
 </head>
 <body>
+<h1>edit and update a customer</h1>
+
+<form action="/updateCustomers" method="post">
+    <input type="text" name="customer_Id" th:value="${c.customer_Id}">
+    <input type="text" name="customer_name" th:value="${c.customer_name}">
+    <input type="text" name="customer_address" th:value="${c.customer_address}">
+    <input type="text" name="zip_code" th:value="${c.zip_code}">
+    <input type="text" name="city" th:value="${c.city}">
+    <input type="text" name="country" th:value="${c.country}">
+    <input type="text" name="mobil_nr" th:value="${c.mobil_nr}">
+    <input type="text" name="email" th:value="${c.email}">
+    <input type="text" name="driversLicence_Nb" th:value="${c.driversLicence_Nb}">
+    <input type="date" name="driver_since" th:value="${c.driver_since}">
+    <input type="submit" value="Save changes">
+</form>
+
+<div class="return-button-container">
+    <a href="/">
+        <button class="btn" id="btn-return">Return to Home Page</button>
+    </a>
+</div>
 
 </body>
 </html>
