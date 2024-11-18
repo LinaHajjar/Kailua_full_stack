@@ -1,7 +1,6 @@
 package com.example.kailua_full_stack.Repository;
 
 import com.example.kailua_full_stack.Model.Car;
-import com.example.kailua_full_stack.Model.Contracts;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -21,9 +20,10 @@ public class CarRepo {
         RowMapper<Car> rowMapper = new BeanPropertyRowMapper<>(Car.class);
         return template.query(sql, rowMapper);
     }
+
     public Car get_Car_by_id(String regNb) throws SQLException {
         String sql = "SELECT * FROM car WHERE regNb = ?";
-        RowMapper<Car> rowMapper = new BeanPropertyRowMapper<>(Car.class);
+        RowMapper<Car> rowMapper = new BeanPropertyRowMapper<>(Car.class); //opretter objekter et af gang og gemme dem i en list
         Car car = template.queryForObject(sql, rowMapper, regNb);
         return car;
     }

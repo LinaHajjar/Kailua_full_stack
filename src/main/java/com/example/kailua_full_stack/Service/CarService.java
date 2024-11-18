@@ -3,6 +3,8 @@ package com.example.kailua_full_stack.Service;
 import com.example.kailua_full_stack.Model.Car;
 import com.example.kailua_full_stack.Repository.CarRepo;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
+import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Service;
 
 import java.sql.SQLException;
@@ -18,7 +20,7 @@ public class CarService {
         return carRepo.get_All_Car();
     }
 
-    public void createCar(Car c) throws SQLException {
+        public void createCar(Car c) throws SQLException {
         carRepo.createCar(c);
     }
 

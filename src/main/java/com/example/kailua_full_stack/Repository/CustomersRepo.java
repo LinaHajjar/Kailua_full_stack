@@ -30,7 +30,7 @@ public class CustomersRepo {
     }
 
     public void makeCustomers(Customers c) throws SQLException {
-        String sql = "INSERT INTO customers (customer_Id, customer_name, customer_address, zip_code, city, country, mobi_nr, email, driversLicence_Nb, driver_since) values (?,?,?,?,?,?,?,?,?,?)";
+        String sql = "INSERT INTO customers (customer_Id, customer_name, customer_address, zip_code, city, country, mobil_nr, email, driversLicence_Nb, driver_since) values (?,?,?,?,?,?,?,?,?,?)";
         template.update(sql, c.getCustomer_Id(),c.getCustomer_name(),c.getCustomer_address(),c.getZip_code(),c.getCity(), c.getCountry(),c.getMobil_nr(),c.getEmail(),c.getDriversLicence_Nb(),c.getDriver_since());
     }
     public void updateCustomers(Customers c) throws SQLException {
