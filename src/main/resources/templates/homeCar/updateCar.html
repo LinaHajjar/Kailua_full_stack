@@ -10,11 +10,13 @@
 <h1>edit and update a car</h1>
 
 <form action="/updateCar" method="post">
-    <input type="text" name="Brand" th:value="${c.brand}">
-    <input type="text" name="Model" th:value="${c.model}">
-    <input type="date" name="First registration date" th:value="${c.firstRegistrationDate}">
-    <input type="text" name="Odometer" th:value="${c.odometer}">
-    <input type="text" name="Description of the car" th:value="${c.description_of_the_car}">
+    <input type="text" name="regNB" th:value="${c.regNB}">
+    <input type="text" name="car_Id" th:value="${c.car_Id}">
+    <input type="text" name="brand" th:value="${c.brand}">
+    <input type="text" name="model" th:value="${c.model}">
+    <input type="date" name="firstRegistrationDate" th:value="${c.firstRegistrationDate}">
+    <input type="text" name="odometer" th:value="${c.odometer}">
+    <input type="text" name="description_of_the_car" th:value="${c.description_of_the_car}">
     <input type="submit" value="Save changes">
 </form>
 

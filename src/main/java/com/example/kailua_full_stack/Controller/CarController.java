@@ -48,14 +48,15 @@ public class CarController {
         return "redirect:/";
     }
 
-    @GetMapping("/updateCar/{regNb}")
-    public String updateCar(@PathVariable("regNb") String regNb, Model model)throws SQLException {
+    @GetMapping("/updateCar/{regNB}")
+    public String updateCar(@PathVariable("regNB") String regNb, Model model)throws SQLException {
         model.addAttribute("c", carService.get_Car_by_id(regNb));
         return "homeCar/updateCar";
     }
 
     @PostMapping("/updateCar")
     public String updateCar(@ModelAttribute Car c) throws SQLException {
+        //System.out.println(c.getRegNB());
         carService.updateCar(c);
         return "redirect:/";
     }
